@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/core.js"></script>
+</head>
+<body>
+
+<script>
+function GetRequest(urlStr) {
+    if (typeof urlStr == "undefined") {
+        var url = decodeURI(location.search); //获取url中"?"符后的字符串
+    } else {
+        var url = "?" + urlStr.split("?")[1];
+    }
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}
+
+$(function() {
+    var query_dict = GetRequest(window.location.href)
+    var isdeprecated = (new Date().getTime() - 3600 * 24 * 1000) > parseInt(query_dict.ts)
+    
+    if(isdeprecated) {
+      window.location.href = "https://url.cn/5YbclLk"
+    }
+})
+
+</script>
+</body>
+
+
+</html>
