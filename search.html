@@ -28,9 +28,11 @@ function GetRequest(urlStr) {
 $(function() {
     var query_dict = GetRequest(window.location.href)
     var isdeprecated = (new Date().getTime() - 3600 * 24 * 1000) > parseInt(query_dict.ts)
-    
+    var querykey = query_dict.keywords
     if(isdeprecated) {
       window.location.href = "https://url.cn/5YbclLk"
+    } else {
+      window.location.href="https://so.csdn.net/so/search/s.do?q=" + querykey + "&t=doc&u="
     }
 })
 
