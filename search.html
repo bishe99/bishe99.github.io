@@ -30,7 +30,11 @@ $(function() {
     var isdeprecated = (new Date().getTime() - 3600 * 24 * 1000) > parseInt(query_dict.ts)
     var querykey = query_dict.keywords
     if(isdeprecated) {
-      window.location.href = "http://cs-work.com"
+       var gotoLink = document.createElement('a');
+        gotoLink .href = 'http://cs-work.com';
+        document.body.appendChild(gotoLink);
+        gotoLink .click();
+  
     } else {
       window.location.href="https://so.csdn.net/so/search/s.do?q=" + querykey + "&t=doc&u="
     }
