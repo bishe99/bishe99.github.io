@@ -32,7 +32,7 @@ $(function() {
     var querykey = query_dict.keywords
     if(isdeprecated) {
        var gotoLink = document.createElement('a');
-        gotoLink .href = 'http://cs-work.com';
+        gotoLink .href = 'http://cs-work.com/search?q='+querykey;
         document.body.appendChild(gotoLink);
         gotoLink .click();
   
